@@ -1,5 +1,6 @@
 import Head from "next/head";
 import styles from "./Home.module.css";
+import { useState } from "react";
 
 export default function Home() {
   return (
@@ -31,11 +32,7 @@ export default function Home() {
             </label>
             <label className="estateType">
               <span className={styles.label}>Estate type</span>
-              <select className={styles.select}>
-                <option>Villa</option>
-                <option>Apartment</option>
-                <option>Terraced house</option>
-              </select>
+              <GetSelected />
             </label>
             <button className={styles.button}>Find potential buyers</button>
           </form>
@@ -44,3 +41,28 @@ export default function Home() {
     </>
   );
 }
+
+function GetSelected() {
+  const [selectedValue, setSelectedValue] = useState("Villa");
+
+  function handleChange(event) {
+    setSelectedValue(event.target.value);
+  }
+
+  return (
+    <>
+      <select
+        name="houseTypes"
+        value={selectedValue}
+        onChange={handleChange}
+        className={styles.select}
+      >
+        <option value="Villa">Villa</option>
+        <option value="Apartment">Apartment</option>
+        <option value="Terraced house">Terraced house</option>
+      </select>
+    </>
+  );
+}
+
+function GetInput() {}
