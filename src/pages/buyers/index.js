@@ -41,10 +41,9 @@ export default function Buyers({ data }) {
           </li>
         </ul>
         <div className={styles.content}>
-          <h2>Query params:</h2>
           <div className={styles.home}>
             {data.map((product) => (
-              <Buyer key={product.id} {...product} />
+              <Buyer key={product.id} {...product} zipCode={query.zipCode} />
             ))}
           </div>
         </div>
