@@ -6,8 +6,8 @@ export default function Buyer(props) {
     <article>
       <h3>{props.maxPrice},-</h3>
       <p>{props.minSize}</p>
-      <p>{props.estateType}</p>
-      <p></p>
+      <p>{estateTypes[props.estateType - 1].name}</p>
+      <p>{props.zipCode}</p>
     </article>
   );
 }
