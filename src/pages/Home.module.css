@@ -11,8 +11,11 @@
   padding: 1rem;
   background-color: var(--dusty-aqua-light);
   border: 1px solid var(--dusty-aqua);
-  margin-bottom: 1rem
+  margin-bottom: 1rem;
+  width: 500px;
+  margin-left: 6rem;
 }
+
 .content :first-child {
   margin-top: 0;
 }
@@ -23,6 +26,8 @@
 .form {
   background-color: var(--dusty-blue-lighter);
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .label {
@@ -36,10 +41,26 @@
 }
 
 .button {
+  margin-top: 10px;
   padding: 0.5rem;
   background: var(--blue);
   color: var(--white);
+  width: 157px;
 }
 .button:hover {
   background: var(--hover);
+}
+
+.h2 {
+  text-align: center;
+}
+
+.label {
+  padding-top: 10px;
+}
+
+.select {
+  padding: 8px;
+  background-color: white;
+  width: 10rem;
 }
