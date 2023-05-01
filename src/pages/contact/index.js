@@ -8,16 +8,14 @@ export default function cont() {
         <title>Find buyer | EDC</title>
       </Head>
       <div className="wrapper">
-        <h1 className={styles.headline}>Hello MMD</h1>
         <div className={styles.content}></div>
       </div>
       <section>
         <from className="kontakt">
           <div className="container">
             <div className="container_box">
-              <div className="left">
+              <form action="/confirmation" className="left">
                 <h2>Contact potential buyers</h2>
-
                 <label>
                   <input
                     placeholder="Name"
@@ -56,8 +54,8 @@ export default function cont() {
                   </p>
                 </label>
 
-                <button className={styles.button}>Send</button>
-              </div>
+                <button className="button">Send</button>
+              </form>
               <div className="right"></div>
             </div>
           </div>
