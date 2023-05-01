@@ -7,7 +7,7 @@ export default function Home() {
       <Head>
         <title>Find buyer | EDC</title>
       </Head>
-      <div className="wrapper container">
+      <div className="wrapper">
         <h1 className={styles.headline}>Seller's page</h1>
         <div className={styles.content}>
           <h2 className={styles.h2}>Find a buyer for your property</h2>
@@ -19,19 +19,19 @@ export default function Home() {
           <form action="/buyers" method="GET" className={styles.form}>
             <label>
               <span className={styles.label}>Zip Code</span>
-              <input className={styles.inputs} name="zipCode" required />
+              <input className="field" name="zipCode" required />
             </label>
             <label>
               <span className={styles.label}>Price</span>
-              <input className={styles.inputs} name="price" required />
+              <input className="field" name="price" required />
             </label>
             <label>
               <span className={styles.label}>Size</span>
-              <input className={styles.inputs} name="size" required />
+              <input className="field" name="size" required />
             </label>
             <label>
               <span className={styles.label}>Estate type</span>
-              <select className={styles.SelectType} name="estateType" required>
+              <select className="field select" name="estateType" required>
                 <option value="1">Villa</option>
                 <option value="2">Villalejlighed</option>
                 <option value="3">Rækkehus</option>
