@@ -59,8 +59,26 @@
   padding-top: 10px;
 }
 
-.select {
+.SelectType {
   padding: 8px;
   background-color: white;
   width: 10rem;
+  border: 1px solid black;
+}
+
+.form {
+  margin-left: 2rem;
+  display: flex;
+  align-items: center;
+  width: 25rem;
+  background-color: var(--dusty-aqua-light);
+}
+
+.p {
+  margin-left: 2rem;
+  margin-right: 1.5rem;
+}
+
+.inputs {
+  border: 1px solid black;
 }
