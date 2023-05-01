@@ -11,8 +11,14 @@ export default function handler(req, res) {
 
   // Find the zip code from the query parameters, and use it to generate a list of (fake) buyer profiles.
   const zipCode = parseInt(req.query.zipCode || "2100");
+  const price = parseInt(req.query.price || "2000000");
+  const size = parseInt(req.query.size || "5000000");
+  const estateType = parseInt(req.query.estateType || "1");
   const profilesForZipCode = generateBuyerProfiles({
     zipCode,
+    price,
+    size,
+    estateType,
   });
 
   // Set the cache headers, so that the response can be cached
