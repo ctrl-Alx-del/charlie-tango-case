@@ -1,8 +1,9 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import styles from "./Buyers.module.css";
+import Buyer from "@/components/Buyers/Buyer";
 
-export default function Buyers() {
+export default function Buyers({ data }) {
   const { query } = useRouter();
   return (
     <>
@@ -41,11 +42,34 @@ export default function Buyers() {
         </ul>
         <div className={styles.content}>
           <h2>Query params:</h2>
-          <pre>
-            <code>{JSON.stringify(query, null, 2)}</code>
-          </pre>
+          <div className={styles.home}>
+            {data.map((product) => (
+              <Buyer key={product.id} {...product} />
+            ))}
+          </div>
         </div>
       </div>
     </>
   );
+}
+
+export async function getServerSideProps(ctx) {
+  // Get data from api
+  const res = await fetch(
+    "http://localhost:3000/api/find-buyers?zipCode" +
+      ctx.query.zipCode +
+      "&price=" +
+      ctx.query.price +
+      "&size=" +
+      ctx.query.size +
+      "&estateType=" +
+      ctx.query.estateType
+  );
+  const data = await res.json();
+  // Return the data inside props
+  return {
+    props: {
+      data,
+    },
+  };
 }
