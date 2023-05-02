@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import styles from "./Buyers.module.css";
-import Buyer from "@/components/Buyers/Buyer";
+import Buyer from "@/components/Buyer";
 
 export default function Buyers({ data }) {
   const { query } = useRouter();
