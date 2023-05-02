@@ -1,4 +1,12 @@
+import React, { useState } from "react";
+
 export default function Buyer(props) {
+  const [selected, setSelected] = useState(false);
+
+  const handleSelect = () => {
+    setSelected(!selected);
+  };
+
   return (
     <div className="card">
       <h2>{props.name}</h2>
@@ -7,6 +15,7 @@ export default function Buyer(props) {
       <p>Zip Code: {props.zipCode}</p>
       <p>Estate Type: {props.estateType}</p>
       <p>Size: {props.minSize}</p>
+      <input type="checkbox" checked={selected} onChange={handleSelect} />
     </div>
   );
 }
