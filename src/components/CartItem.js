@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { DispatchContext } from "@/contexts/storeContext";
+import { DispatchContext } from "@/contexts/buyerContext";
 
 export default function CartItem(props) {
   const dispatch = useContext(DispatchContext);
@@ -11,12 +11,5 @@ export default function CartItem(props) {
       },
     });
   }
-  function addOne() {
-    dispatch({
-      action: "ADD_PRODUCT",
-      payload: {
-        id: props.id,
-      },
-    });
-  }
+  return <></>;
 }

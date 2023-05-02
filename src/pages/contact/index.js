@@ -1,7 +1,31 @@
 import Head from "next/head";
 import styles from "./Contact.module.css";
+import { StoreContext } from "@/contexts/buyerContext";
+import { useContext, useRef } from "react";
+import Buyer from "@/components/Buyer";
+import { estateTypes } from "@/data/estateTypes";
 
-export default function cont() {
+export default function Checkout() {
+  const formEl = useRef(null);
+  const state = useContext(StoreContext);
+  const { basket } = state;
+  function submitted(e) {
+    e.preventDefault();
+    const payload = {
+      name: "Jonas",
+      email: "jofh@kea.dk",
+      basket: basket,
+    };
+    fetch("/api/add-order", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  }
   return (
     <>
       <Head>
@@ -11,10 +35,15 @@ export default function cont() {
         <div className={styles.content}></div>
       </div>
       <section>
-        <from className="kontakt">
+        <div className="kontakt">
           <div className="container">
             <div className="container_box">
-              <form action="/confirmation" className="left">
+              <form
+                ref={formEl}
+                onSubmit={submitted}
+                action="/confirmation"
+                className="left"
+              >
                 <h2>Contact potential buyers</h2>
                 <label>
                   <input
@@ -56,10 +85,19 @@ export default function cont() {
 
                 <button className="button">Send</button>
               </form>
-              <div className="right"></div>
+              <div className="right">
+                {basket.map((item) => (
+                  <div key={item.key}>
+                    <p>{item.zipCode}</p>
+                    <p>{item.price} kr.</p>
+                    <p>{item.estateType}</p>
+                    <p>{item.size} m²</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </from>
+        </div>
       </section>
     </>
   );

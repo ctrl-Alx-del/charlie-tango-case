@@ -9,6 +9,8 @@ const initialState = {
 
 function reducer(state, action) {
   switch (action.action) {
+    case "EMPTY_BASKET":
+      return { ...state, basket: [] };
     case "REMOVE_ONE_PRODUCT":
       const nextBasket = state.basket.map((item) => {
         if (item.id === action.payload.id) {
