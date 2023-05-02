@@ -54,7 +54,7 @@ export default function cont() {
                   </p>
                 </label>
 
-                <button className={styles.button}>Send</button>
+                <button className="button">Send</button>
               </form>
               <div className="right"></div>
             </div>
