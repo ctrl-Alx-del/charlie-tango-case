@@ -10,8 +10,9 @@ export default function Checkout() {
   function submitted(e) {
     e.preventDefault();
     const payload = {
-      name: "Jonas",
-      email: "jofh@kea.dk",
+      name: e.query.name,
+      email: e.query.email,
+      phone: e.query.phone,
       basket: basket,
     };
     fetch("/api/add-order", {
@@ -48,7 +49,7 @@ export default function Checkout() {
                     placeholder="Name"
                     type="text"
                     className="field"
-                    name="Name"
+                    name="name"
                     required
                   />
                 </label>
@@ -68,7 +69,7 @@ export default function Checkout() {
                     placeholder="Phone"
                     type="text"
                     className="field"
-                    name="Phone"
+                    name="phone"
                     required
                   />
                 </label>
