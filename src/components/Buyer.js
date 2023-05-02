@@ -5,15 +5,10 @@ import CartItem from "./CartItem";
 
 export default function Buyer(props) {
   const [selected, setSelected] = useState(false);
-
-  const handleSelect = () => {
-    setSelected(!selected);
-  };
+  const dispatch = useContext(DispatchContext);
 
   let price = props.maxPrice;
   let priceDots = price.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
-
-  const dispatch = useContext(DispatchContext);
 
   function addToBasket() {
     if (selected) {
@@ -22,6 +17,10 @@ export default function Buyer(props) {
         action: "REMOVE_ONE_PRODUCT",
         payload: {
           id: props.id,
+          zipCode: props.zipCode,
+          price: priceDots,
+          estateType: estateTypes[props.estateType - 1].name,
+          size: props.minSize,
         },
       });
     } else if (!selected) {
@@ -30,6 +29,10 @@ export default function Buyer(props) {
         action: "ADD_PRODUCT",
         payload: {
           id: props.id,
+          zipCode: props.zipCode,
+          price: priceDots,
+          estateType: estateTypes[props.estateType - 1].name,
+          size: props.minSize,
         },
       });
     }
