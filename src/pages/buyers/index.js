@@ -42,8 +42,8 @@ export default function Buyers({ data }) {
         </ul>
         <div className={styles.content}>
           <div className={styles.home}>
-            {data.map((product) => (
-              <Buyer key={product.id} {...product} zipCode={query.zipCode} />
+            {data.map((buyer) => (
+              <Buyer key={buyer.id} {...buyer} zipCode={query.zipCode} />
             ))}
           </div>
         </div>

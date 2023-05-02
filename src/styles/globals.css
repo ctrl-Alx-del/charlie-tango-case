@@ -128,3 +128,13 @@ button:hover {
   width: 25px;
   background-color: #eee;
 }
+
+/* buyers cards */
+.card {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.19);
+}

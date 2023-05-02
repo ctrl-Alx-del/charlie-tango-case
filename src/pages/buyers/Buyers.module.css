@@ -11,8 +11,10 @@
   padding: 1rem;
   background-color: var(--dusty-aqua-light);
   border: 1px solid var(--dusty-aqua);
-  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.19);
 }
+
 .content :first-child {
   margin-top: 0;
 }
