@@ -1,7 +1,6 @@
 import { estateTypes } from "@/data/estateTypes";
 import React, { useState, useContext } from "react";
 import { DispatchContext } from "@/contexts/buyerContext";
-import CartItem from "./CartItem";
 
 export default function Buyer(props) {
   const [selected, setSelected] = useState(false);

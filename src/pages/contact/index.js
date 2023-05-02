@@ -2,8 +2,6 @@ import Head from "next/head";
 import styles from "./Contact.module.css";
 import { StoreContext } from "@/contexts/buyerContext";
 import { useContext, useRef } from "react";
-import Buyer from "@/components/Buyer";
-import { estateTypes } from "@/data/estateTypes";
 
 export default function Checkout() {
   const formEl = useRef(null);
