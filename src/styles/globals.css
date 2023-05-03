@@ -111,6 +111,7 @@ button:hover {
   font-size: 1.1rem;
   margin-bottom: 22px;
   transition: 0.3s;
+  color: var(--blue);
 }
 
 .field:hover {
@@ -119,14 +120,20 @@ button:hover {
 
 .field:focus {
   background-color: #fff;
-  border: 2px solid #0d2e4d;
+  border: 1.5px solid #0d2e4d;
 }
 
 /* checkbox */
 .checkbox {
-  height: 25px;
-  width: 25px;
+  height: 20px;
+  width: 20px;
   background-color: #eee;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.checkbox:checked {
+  transform: translateY(-5px);
 }
 
 /* buyers cards */

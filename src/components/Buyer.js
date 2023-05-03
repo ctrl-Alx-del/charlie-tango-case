@@ -45,7 +45,12 @@ export default function Buyer(props) {
       <p>Zip Code: {props.zipCode}</p>
       <p>Estate Type: {estateTypes[props.estateType - 1].name}</p>
       <p>Size: {props.minSize} m²</p>
-      <input type="checkbox" checked={selected} onChange={addToBasket} />
+      <input
+        className="checkbox"
+        type="checkbox"
+        checked={selected}
+        onChange={addToBasket}
+      />
     </div>
   );
 }

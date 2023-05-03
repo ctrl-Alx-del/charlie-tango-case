@@ -85,14 +85,17 @@ export default function Checkout() {
                 <button className="button">Send</button>
               </form>
               <div className="right">
-                {basket.map((item) => (
-                  <div key={item.key}>
-                    <p>{item.zipCode}</p>
-                    <p>{item.price} kr.</p>
-                    <p>{item.estateType}</p>
-                    <p>{item.size} m²</p>
-                  </div>
-                ))}
+                <div className={styles.home}>
+                  {" "}
+                  {basket.map((item) => (
+                    <div key={item.key}>
+                      <p>{item.zipCode}</p>
+                      <p>{item.price} kr.</p>
+                      <p>{item.estateType}</p>
+                      <p>{item.size} m²</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
