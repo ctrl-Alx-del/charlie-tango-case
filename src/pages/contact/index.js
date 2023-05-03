@@ -3,8 +3,10 @@ import styles from "./Contact.module.css";
 import { StoreContext } from "@/contexts/buyerContext";
 import { useContext, useRef } from "react";
 import { createClient } from "@supabase/supabase-js";
+import { useRouter } from "next/router";
 
 export default function Checkout() {
+  const router = useRouter();
   const formEl = useRef(null);
   const state = useContext(StoreContext);
   const { basket } = state;
@@ -49,12 +51,7 @@ export default function Checkout() {
         <div className="kontakt">
           <div className="container">
             <div className="container_box">
-              <form
-                ref={formEl}
-                onSubmit={submitted}
-                action="/confirmation"
-                className="left"
-              >
+              <form ref={formEl} onSubmit={submitted} className="left">
                 <h2>Contact potential buyers</h2>
                 <label>
                   <input
@@ -94,7 +91,12 @@ export default function Checkout() {
                   </p>
                 </label>
 
-                <button className="button">Send</button>
+                <button
+                  className="button"
+                  onClick={() => router.push("/confirmation")}
+                >
+                  Send
+                </button>
               </form>
               <div className="right">
                 <div className={styles.home}>
