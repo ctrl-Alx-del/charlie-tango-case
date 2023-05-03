@@ -46,7 +46,7 @@ function Dashboard() {
               </p>
               <button
                 className="button"
-                conClick={() => handleDeleteRequest(request.id)}
+                onClick={() => handleDeleteRequest(request.id)}
               >
                 Delete
               </button>
