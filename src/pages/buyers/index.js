@@ -38,7 +38,7 @@ export default function Buyers({ data }) {
 export async function getServerSideProps(ctx) {
   // Get data from api
   const res = await fetch(
-    "http://localhost:3000/api/find-buyers?zipCode" +
+    "http://charlie-tango-case-six.vercel.app/api/find-buyers?zipCode" +
       ctx.query.zipCode +
       "&price=" +
       ctx.query.price +
