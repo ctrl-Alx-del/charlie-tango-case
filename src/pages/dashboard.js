@@ -31,24 +31,29 @@ function Dashboard() {
 
   return (
     <div>
-      <h1>Contacts</h1>
-      <ul>
-        {requests.map((request) => (
-          <li key={request.id}>
-            <p>Date: {new Date(request.created_at).toLocaleDateString()}</p>
-            <p>Name: {request.name}</p>
-            <p>
-              Email: <a href={`mailto:${request.email}`}>{request.email}</a>
-            </p>
-            <p>
-              Phone: <a href={`tel:${request.phone}`}>{request.phone}</a>
-            </p>
-            <button onClick={() => handleDeleteRequest(request.id)}>
-              Delete
-            </button>
-          </li>
-        ))}
-      </ul>
+      <div className="dash">
+        <h1>Contacts</h1>
+        <ul>
+          {requests.map((request) => (
+            <li key={request.id}>
+              <p>Date: {new Date(request.created_at).toLocaleDateString()}</p>
+              <p>Name: {request.name}</p>
+              <p>
+                Email: <a href={`mailto:${request.email}`}>{request.email}</a>
+              </p>
+              <p>
+                Phone: <a href={`tel:${request.phone}`}>{request.phone}</a>
+              </p>
+              <button
+                className="button"
+                conClick={() => handleDeleteRequest(request.id)}
+              >
+                Delete
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

@@ -145,3 +145,33 @@ button:hover {
   padding: 16px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.19);
 }
+
+.dash {
+  display: grid;
+  justify-content: center;
+  grid-column: 2/3;
+  grid-gap: 20px;
+  text-align: center;
+}
+
+.dash ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dash li {
+  margin-bottom: 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.19);
+  border-radius: 8px;
+  padding-left: 53px;
+  padding-right: 52px;
+}
+
+.dash a {
+  text-decoration: none;
+  color: var(--blue);
+}
