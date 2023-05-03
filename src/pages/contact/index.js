@@ -52,7 +52,10 @@ export default function Checkout() {
           <div className="container">
             <div className="container_box">
               <form ref={formEl} onSubmit={submitted} className="left">
-                <h2>Contact potential buyers</h2>
+                <h1 className={styles.h1}>
+                  Contact potential{" "}
+                  <span className={styles.headline}>buyers</span>
+                </h1>
                 <label>
                   <input
                     placeholder="Name"

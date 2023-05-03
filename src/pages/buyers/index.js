@@ -15,7 +15,9 @@ export default function Buyers({ data }) {
         <title>Find buyer | EDC</title>
       </Head>
       <div className="wrapper">
-        <h1 className={styles.headline}>Potential buyers</h1>
+        <h1 className={styles.h1}>
+          Potential <span className={styles.headline}>buyers</span>
+        </h1>
         {state.basket.length > 0 ? (
           <Link className={styles.button} href="/contact">
             Choose selected Buyers

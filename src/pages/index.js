@@ -8,14 +8,15 @@ export default function Home() {
         <title>Find buyer | EDC</title>
       </Head>
       <div className="wrapper">
-        <h1 className={styles.headline}>Sellers page</h1>
+        <h1 className={styles.h1}>
+          Find <span className={styles.headline}>a buyer</span> for your
+          property
+        </h1>
         <div className={styles.content}>
-          <h2 className={styles.h2}>Find a buyer for your property</h2>
           <p className={styles.p}>
             Here you can search after buyers for your property and sell it to
             the potential buyer.
           </p>
-
           <form action="/buyers" method="GET" className={styles.form}>
             <label>
               <span className={styles.label}>Zip Code</span>
