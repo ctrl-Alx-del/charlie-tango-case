@@ -8,7 +8,7 @@ export default function Home() {
         <title>Find buyer | EDC</title>
       </Head>
       <div className="wrapper">
-        <h1 className={styles.headline}>Seller's page</h1>
+        <h1 className={styles.headline}>Sellers page</h1>
         <div className={styles.content}>
           <h2 className={styles.h2}>Find a buyer for your property</h2>
           <p className={styles.p}>
