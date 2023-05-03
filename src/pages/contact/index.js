@@ -2,29 +2,41 @@ import Head from "next/head";
 import styles from "./Contact.module.css";
 import { StoreContext } from "@/contexts/buyerContext";
 import { useContext, useRef } from "react";
+import { createClient } from "@supabase/supabase-js";
 
 export default function Checkout() {
   const formEl = useRef(null);
   const state = useContext(StoreContext);
   const { basket } = state;
+
+  // Initialize Supabase client
+  const supabase = createClient(
+    "https://fbqdkjurwhlhzytwwqng.supabase.co",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZicWRranVyd2hsaHp5dHd3cW5nIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODMwMjY3MjMsImV4cCI6MTk5ODYwMjcyM30.dfxQxZZyAZ1-vFpLrECXTIakwI-UHxBmGtXxAUNtPPQ"
+  );
+
+  // Function to submit form data to Supabase
+  async function submitToSupabase(formData) {
+    const { data, error } = await supabase.from("Contacts").insert(formData);
+    if (error) {
+      console.error(error);
+    } else {
+      console.log(data);
+    }
+  }
+
+  // Function to handle form submission
   function submitted(e) {
     e.preventDefault();
-    const payload = {
-      name: e.query.name,
-      email: e.query.email,
-      phone: e.query.phone,
+    const formData = {
+      name: e.target.elements.name.value,
+      email: e.target.elements.email.value,
+      phone: e.target.elements.phone.value,
       basket: basket,
     };
-    fetch("/api/add-order", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data));
+    submitToSupabase(formData);
   }
+
   return (
     <>
       <Head>
